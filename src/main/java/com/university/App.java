@@ -11,7 +11,7 @@ public class App {
             return "<html><body style='font-family:sans-serif;text-align:center;padding:50px;'>"
                  + "<h1 style='color:#1B365D;'>Cloud Registration Service</h1>"
                  + "<p>Status: <strong>Active & Healthy</strong></p>"
-                 + "<p>Deployment: Automated CI/CD Pipeline v1.0.0</p>"
+                 + "<p>Deployment: Automated CI/CD Pipeline v2.0.0 (Live Redeploy)</p>"
                  + "</body></html>";
         });
 
