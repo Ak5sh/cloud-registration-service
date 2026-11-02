@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-registration-deployment
+  labels:
+    app: cloud-registration
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloud-registration
+  template:
+    metadata:
+      labels:
+        app: cloud-registration
+    spec:
+      containers:
+      - name: registration-service
+        image: akashv2310/cloud-registration:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"

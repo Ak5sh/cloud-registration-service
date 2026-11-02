@@ -1,0 +1,5 @@
+target/
+!target/cloud-registration-service-1.0.0.jar
+.git
+.gitignore
+*.md

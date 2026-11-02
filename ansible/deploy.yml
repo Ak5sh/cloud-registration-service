@@ -1,0 +1,16 @@
+---
+- name: Automate Kubernetes Deployment Rollout
+  hosts: local
+  gather_facts: false
+  tasks:
+    - name: Apply Kubernetes Deployment Manifest
+      command: kubectl apply -f ../deployment.yaml
+
+    - name: Apply Kubernetes Service Manifest
+      command: kubectl apply -f ../service.yaml
+
+    - name: Restart Deployment to Pull Latest Container Image
+      command: kubectl rollout restart deployment/cloud-registration-deployment
+
+    - name: Await Deployment Readiness Status
+      command: kubectl rollout status deployment/cloud-registration-deployment --timeout=120s
